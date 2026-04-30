@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Adobe Workfront - oAuth2 - v9",
+    "title": "Workfront Event Subscription",
     "version": "1.0.0",
     "description": "Custom connector for Adobe Workfront.",
     "contact": {
-      "name": "API Support",
-      "email": "support@example.com"
+      "name": "P-Product",
+      "email": "partners@p-product.com"
     }
   },
   "schemes": [

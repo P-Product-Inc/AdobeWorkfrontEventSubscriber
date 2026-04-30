@@ -1,7 +1,6 @@
 public class Script : ScriptBase
 {
     private readonly string HTTP_HEADER_NAME_API_KEY = "X-WORKFRONT-API-KEY";
-    private readonly string HTTP_HEADER_NAME_CUSTOMER_ID = "X-WORKFRONT-CUSTOMERID";
     private readonly string HTTP_HEADER_NAME_AUTHORIZATION = "Authorization";
     private readonly string HTTP_HEADER_NAME_SESSION_ID = "sessionID";
     private readonly string HTTP_HEADER_NAME_JWT_CLIENT_ID = "X-WORKFRONT-JWT-CLIENT-ID";
@@ -30,21 +29,7 @@ public class Script : ScriptBase
                 .ConfigureAwait(false);
 
             SetSessionIdHttpHeader(sessionID);
-            RemoveHttpHeaderByName(HTTP_HEADER_NAME_CUSTOMER_ID);
             RemoveHttpHeaderByName(HTTP_HEADER_NAME_API_KEY);
-        }
-
-        // oAuth token authentication
-        if (CheckIsHttpHeaderExistsAndHasValue(HTTP_HEADER_NAME_AUTHORIZATION))
-        {
-            var authToken = request.Headers
-                .GetValues(HTTP_HEADER_NAME_AUTHORIZATION)
-                .First()
-                .Replace("Bearer", "")
-                .Trim();
-
-            SetSessionIdHttpHeader(authToken);
-            request.Headers.Remove(HTTP_HEADER_NAME_AUTHORIZATION);
         }
 
         // JWT token authentication
@@ -68,7 +53,6 @@ public class Script : ScriptBase
                 .ConfigureAwait(false);
 
             SetSessionIdHttpHeader(accessToken);
-            RemoveHttpHeaderByName(HTTP_HEADER_NAME_CUSTOMER_ID);
         }
 
         RemoveHttpHeaderByName(HTTP_HEADER_NAME_JWT_CLIENT_ID);
@@ -179,7 +163,6 @@ public class Script : ScriptBase
             HttpMethod.Post,
             BuildJwtExchangeAbsoluteUrl(workfrontHost));
 
-        req.Headers.Add(HTTP_HEADER_NAME_CUSTOMER_ID, customerId);
         req.Content = new FormUrlEncodedContent(new Dictionary<string, string>
         {
             ["client_id"] = clientId,

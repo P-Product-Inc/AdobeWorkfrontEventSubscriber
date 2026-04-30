@@ -21,7 +21,7 @@
                 "tooltip": "Enter your Workfront domain without https://",
                 "constraints": {
                   "tabIndex": 1,
-                  "required": true,
+                  "required": "true",
                   "capability": [
                     "cloud"
                   ]
@@ -45,67 +45,7 @@
               }
             }
           }
-        },
-        {
-          "name": "oauth2-code-flow",
-          "uiDefinition": {
-            "displayName": "Use Workfront oAuth application",
-            "description": "Use the oAuth2 approach for the authentication"
-          },
-          "parameters": {
-            "workfrontDomain": {
-              "type": "string",
-              "uiDefinition": {
-                "displayName": "Workfront Domain",
-                "description": "Your full Workfront domain (e.g., mycompany.my.workfront.com or dmeps.sb01.workfront.com)",
-                "tooltip": "Enter your Workfront domain without https://",
-                "constraints": {
-                  "tabIndex": 1,
-                  "required": true,
-                  "capability": [
-                    "cloud"
-                  ]
-                }
-              }
-            },
-            "workfrontAuthCodeFlowClientId": {
-              "type": "securestring",
-              "uiDefinition": {
-                "displayName": "Client ID",
-                "description": "The Client ID",
-                "tooltip": "Enter the Client ID",
-                "constraints": {
-                  "tabIndex": 2,
-                  "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
-                }
-              }
-            },
-            "token": {
-              "type": "oauthSetting",
-              "oAuthSettings": {
-                "clientId": "b66c4bd5f43129cd341f510acea65335",
-                "identityProvider": "oauth2",
-                "redirectMode": "GlobalPerConnector",
-                "customParameters": {
-                  "authorizationUrl": {
-                    "value": "https://u109kazi28.testdrive.workfront.com/integrations/oauth2/authorize"
-                  },
-                  "refreshUrl": {
-                    "value": "https://u109kazi28.testdrive.workfront.com/integrations/oauth2/api/v1/token"
-                  },
-                  "tokenUrl": {
-                    "value": "https://u109kazi28.testdrive.workfront.com/integrations/oauth2/api/v1/token"
-                  }
-                }
-              }
-            }
-          }
-        },
-        
+        },        
         {
           "name": "jwt-exchange",
           "uiDefinition": {
@@ -121,7 +61,7 @@
                 "tooltip": "Enter your Workfront domain with https:// or http://",
                 "constraints": {
                   "tabIndex": 1,
-                  "required": true,
+                  "required": "true",
                   "capability": [
                     "cloud"
                   ]
@@ -152,7 +92,7 @@
                 "tooltip": "Enter the Client Secret",
                 "constraints": {
                   "tabIndex": 3,
-                  "required": true,
+                  "required": "true",
                   "capability": [
                     "cloud"
                   ]
@@ -222,19 +162,7 @@
         "parameters": {
           "x-ms-apimTemplateParameter.urlTemplate": "@connectionParameters('workfrontDomain')/"
         }
-      },
-      {
-        "templateId": "setheader",
-        "title": "Inject customer id",
-        "parameters": {
-          "x-ms-apimTemplate-policySection": "Request",
-          "x-ms-apimTemplateParameter.name": "X-WORKFRONT-CUSTOMERID",
-          "x-ms-apimTemplateParameter.value": "@connectionParameters('workfrontAuthCodeFlowClientId', '')",
-          "x-ms-apimTemplateParameter.existsAction": "override"
-        }
-      },
-
-      
+      },      
       {
         "templateId": "setheader",
         "title": "Inject Client ID",
@@ -286,6 +214,6 @@
         }
       }
     ],
-    "publisher": "Alex"
+    "publisher": "P-Product"
   }
 }
