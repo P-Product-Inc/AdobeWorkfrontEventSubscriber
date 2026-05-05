@@ -21,10 +21,7 @@
                 "tooltip": "Enter your Workfront domain without https://",
                 "constraints": {
                   "tabIndex": 1,
-                  "required": "true",
-                  "capability": [
-                    "cloud"
-                  ]
+                  "required": "true"
                 }
               }
             },
@@ -37,10 +34,7 @@
                 "constraints": {
                   "tabIndex": 2,
                   "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
+                  "clearText": false
                 }
               }
             }
@@ -61,10 +55,7 @@
                 "tooltip": "Enter your Workfront domain with https:// or http://",
                 "constraints": {
                   "tabIndex": 1,
-                  "required": "true",
-                  "capability": [
-                    "cloud"
-                  ]
+                  "required": "true"
                 }
               }
             },
@@ -77,10 +68,7 @@
                 "constraints": {
                   "tabIndex": 2,
                   "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
+                  "clearText": false
                 }
               }
             },
@@ -92,10 +80,7 @@
                 "tooltip": "Enter the Client Secret",
                 "constraints": {
                   "tabIndex": 3,
-                  "required": "true",
-                  "capability": [
-                    "cloud"
-                  ]
+                  "required": "true"
                 }
               }
             },
@@ -108,10 +93,7 @@
                 "constraints": {
                   "tabIndex": 4,
                   "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
+                  "clearText": false
                 }
               }
             },
@@ -124,10 +106,7 @@
                 "constraints": {
                   "tabIndex": 5,
                   "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
+                  "clearText": false
                 }
               }
             },
@@ -140,10 +119,7 @@
                 "constraints": {
                   "tabIndex": 6,
                   "required": "true",
-                  "clearText": false,
-                  "capability": [
-                    "cloud"
-                  ]
+                  "clearText": false
                 }
               }
             }
@@ -151,7 +127,7 @@
         }
       ]
     },
-    "iconBrandColor": "#0066cc",
+    "iconBrandColor": "#1B1E52",
     "capabilities": [
       "actions"
     ],
